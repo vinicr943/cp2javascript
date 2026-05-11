@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Figures Store</title>
+    <link rel="stylesheet" href="../src/css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <h1>Action Figures Store</h1>
+        <nav>
+         <a href="../index.html">Início</a>
+         <a href="./loja.html">Loja</a>
+         <a href="./sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="banner">
+         <h2>Carrinho de Compras</h2>
+        </section>
+
+        <section class="produtos">
+            <h2>Itens do Carrinho</h2>
+
+            <div id="carrinho-container" class="cards-container"></div>
+
+        </section>
+
+        <section class="produtos">
+            <h2>Resumo</h2>
+
+            <h3 id="total">Total: R$ 0,00</h3>
+
+            <button onclick="calcularTotal()">Calcular Total</button>
+            <button onclick="aplicarDesconto()">Aplicar 10% OFF</button>
+
+        </section>
+
+    </main>
+
+    <script src="../src/js/loja.js"></script>
+
+</body>
+</html>
