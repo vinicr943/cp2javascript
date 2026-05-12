@@ -1,34 +1,34 @@
 const containerProdutos = document.getElementById("produtos-container");
 
 const produtos = [
-    {
-        nome: "Batman",
-        preco: 199.90,
-        imagem: "./src/assets/img/batman.jpg",
-        descricao: "Action Figure do Batman"
-    },
+   {
+    nome: "Batman",
+    preco: 199.90,
+    imagem: "/src/assets/batman.png",
+    descricao: "Action Figure do Batman"
+   },
     {
         nome: "Homem-Aranha",
         preco: 249.90,
-        imagem: "./src/assets/img/homem-aranha.jpg",
+        imagem: "/src/assets/homem-aranha.png",
         descricao: "Action Figure do Homem-Aranha"
     },
     {
         nome: "Homem de Ferro",
         preco: 299.90,
-        imagem: "./src/assets/img/homem-ferro.jpg",
+        imagem: "/src/assets/homem-de-ferro.png",
         descricao: "Action Figure do Homem de Ferro"
     },
     {
         nome: "Capitão América",
         preco: 189.90,
-        imagem: "./src/assets/img/capitao-america.jpg",
+        imagem: "/src/assets/capitao-america.png",
         descricao: "Action Figure do Capitão América"
     },
     {
         nome: "Thor",
         preco: 279.90,
-        imagem: "./src/assets/img/thor.jpg",
+        imagem: "/src/assets/thor.png",
         descricao: "Action Figure do Thor"
     }
 ];
@@ -39,7 +39,7 @@ function mostrarProdutos() {
 
     const html = produtos.map(item => `
         <div class="card">
-            <img src="${item.imagem}" alt="${item.nome}">
+            <img src="${item.imagem}" alt="${item.nome}" style="width: 100%; height: 200px; object-fit: contain;">
             <h3>${item.nome}</h3>
             <p>${item.descricao}</p>
             <p>R$ ${item.preco}</p>
