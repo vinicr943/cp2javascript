@@ -4,31 +4,31 @@ const produtos = [
    {
     nome: "Batman",
     preco: 199.99,
-    imagem: "/src/assets/batman.png",
+    imagem: "./src/assets/batman.png",
     descricao: "Action Figure do Batman"
    },
     {
         nome: "Homem-Aranha",
         preco: 249.99,
-        imagem: "/src/assets/homem-aranha.png",
+        imagem: "./src/assets/homem-aranha.png",
         descricao: "Action Figure do Homem-Aranha"
     },
     {
         nome: "Homem de Ferro",
         preco: 299.99,
-        imagem: "/src/assets/homem-de-ferro.png",
+        imagem: "./src/assets/homem-de-ferro.png",
         descricao: "Action Figure do Homem de Ferro"
     },
     {
         nome: "Capitão América",
         preco: 189.99,
-        imagem: "/src/assets/capitao-america.png",
+        imagem: "./src/assets/capitao-america.png",
         descricao: "Action Figure do Capitão América"
     },
     {
         nome: "Thor",
         preco: 279.99,
-        imagem: "/src/assets/thor.png",
+        imagem: "./src/assets/thor.png",
         descricao: "Action Figure do Thor"
     }
 ];
@@ -69,7 +69,7 @@ function mostrarCarrinho() {
     containerCarrinho.innerHTML = html;
 }
 
-function calcularTotal() {
+function calcularTotalAutomatico() {
 
     if (!totalElemento) return;
 
@@ -89,6 +89,6 @@ function aplicarDesconto() {
 }
 
 mostrarCarrinho();
+calcularTotalAutomatico();
 
-window.calcularTotal = calcularTotal;
 window.aplicarDesconto = aplicarDesconto;

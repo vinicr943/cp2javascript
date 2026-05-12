@@ -22,7 +22,10 @@ padding: 20px 40px;
 
 header h1{
 color: #ffffff;
-font-size: 24px;
+font-size: 28px;
+font-family: "Abel", sans-serif;
+font-weight: 800;
+font-style: normal;
 }
 
 nav{
@@ -44,7 +47,7 @@ color: #ffffff;
 }
 
 .banner{
-background: linear-gradient(160deg, #0C447C, #2d80c8);
+background: linear-gradient(to right, #0C447C, #2d80c8);
 text-align: center;
 padding: 60px 20px;
 }
@@ -55,7 +58,7 @@ font-size: 38px;
 }
 
 .abaixo{
-background-color: #E6F1FB;
+background: linear-gradient(to right, #E6F1FB, #a4d3ff);
 padding: 25px 40px;
 }
 
@@ -64,8 +67,23 @@ color: #185FA5;
 font-size: 22px;
 }
 
+.sobre {
+padding: 40px;
+}
+
+.sobre h2{
+margin-bottom: 10px;
+color: #0C447C;
+}
+
+.sobre p{
+margin-bottom: 8px;
+line-height: 1.6;
+}
+
 .produtos{
 padding: 40px;
+text-align: center;
 }
 
 .produtos h2{
@@ -160,6 +178,7 @@ justify-content: center;
 gap: 10px;
 margin-top: 25px;
 flex-wrap: wrap;
+
 }
 
 button{
@@ -170,10 +189,13 @@ padding: 12px 25px;
 border-radius: 30px;
 cursor: pointer;
 transition: 0.3s;
+  font-family: "Abel", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 button:hover{
-background-color: #0C447C;
+background-color: #2471be;
 transform: scale(1.05);
 }
 
