@@ -42,7 +42,7 @@ function mostrarProdutos() {
             <img src="${item.imagem}" alt="${item.nome}" style="width: 100%; height: 200px; object-fit: contain;">
             <h3>${item.nome}</h3>
             <p>${item.descricao}</p>
-            <p>R$ ${item.preco}</p>
+            <p>R$ ${item.preco.toFixed(2)}</p>
         </div>
     `).join("");
 
@@ -58,7 +58,15 @@ function mostrarCarrinho() {
 
     if (!containerCarrinho) return;
 
-    containerCarrinho.innerHTML = "";
+    const html = produtos.map(item => `
+        <div class="card">
+            <h3>${item.nome}</h3>
+            <p>${item.descricao}</p>
+            <p>R$ ${item.preco.toFixed(2)}</p>
+        </div>
+    `).join("");
+
+    containerCarrinho.innerHTML = html;
 }
 
 function calcularTotal() {
