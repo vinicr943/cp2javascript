@@ -1,4 +1,4 @@
-const container = document.getElementById("produtos-container");
+const containerProdutos = document.getElementById("produtos-container");
 
 const produtos = [
     {
@@ -35,6 +35,8 @@ const produtos = [
 
 function mostrarProdutos() {
 
+    if (!containerProdutos) return;
+
     const html = produtos.map(item => `
         <div class="card">
             <img src="${item.imagem}" alt="${item.nome}">
@@ -44,45 +46,41 @@ function mostrarProdutos() {
         </div>
     `).join("");
 
-    container.innerHTML = html;
+    containerProdutos.innerHTML = html;
 }
 
 mostrarProdutos();
 
-const container = document.getElementById("carrinho-container");
+const containerCarrinho = document.getElementById("carrinho-container");
 const totalElemento = document.getElementById("total");
-
-const carrinho = [
-    { nome: "Batman", preco: 199.90, imagem: "../src/assets/img/batman.jpg" },
-    { nome: "Homem-Aranha", preco: 249.90, imagem: "../src/assets/img/homem-aranha.jpg" },
-    { nome: "Homem de Ferro", preco: 299.90, imagem: "../src/assets/img/homem-ferro.jpg" }
-];
 
 function mostrarCarrinho() {
 
-    const html = carrinho.map(item => `
-        <div class="card">
-            <img src="${item.imagem}">
-            <h3>${item.nome}</h3>
-            <p>R$ ${item.preco}</p>
-        </div>
-    `).join("");
+    if (!containerCarrinho) return;
 
-    container.innerHTML = html;
+    containerCarrinho.innerHTML = "";
 }
 
 function calcularTotal() {
 
-    const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+    if (!totalElemento) return;
+
+    const total = produtos.reduce((acc, item) => acc + item.preco, 0);
 
     totalElemento.innerText = `Total: R$ ${total.toFixed(2)}`;
 }
 
 function aplicarDesconto() {
 
-    const total = carrinho.reduce((acc, item) => acc + item.preco, 0) * 0.9;
+    if (!totalElemento) return;
 
-    totalElemento.innerText = `Total com desconto: R$ ${total.toFixed(2)}`;
+    const total = produtos.reduce((acc, item) => acc + item.preco, 0);
+    const desconto = total * 0.9;
+
+    totalElemento.innerText = `Total com desconto: R$ ${desconto.toFixed(2)}`;
 }
 
 mostrarCarrinho();
+
+window.calcularTotal = calcularTotal;
+window.aplicarDesconto = aplicarDesconto;
