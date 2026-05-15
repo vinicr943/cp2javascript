@@ -2,40 +2,43 @@ const containerProdutos = document.getElementById("produtos-container");
 const containerCarrinho = document.getElementById("carrinho-container");
 const totalElemento = document.getElementById("total");
 
+const estaEmPages = window.location.pathname.includes('/pages/');
+const assetsPath = estaEmPages ? '../src/assets/' : './src/assets/';
+
 const produtos = [
    {
     id: 1,
     nome: "Batman",
     preco: 199.99,
-    imagem: "./src/assets/batman.png",
+    imagem: "batman.png",
     descricao: "Action Figure do Batman"
    },
     {
         id: 2,
         nome: "Homem-Aranha",
         preco: 249.99,
-        imagem: "./src/assets/homem-aranha.png",
+        imagem: "homem-aranha.png",
         descricao: "Action Figure do Homem-Aranha"
     },
     {
         id: 3,
         nome: "Homem de Ferro",
         preco: 299.99,
-        imagem: "./src/assets/homem-de-ferro.png",
+        imagem: "homem-de-ferro.png",
         descricao: "Action Figure do Homem de Ferro"
     },
     {
         id: 4,
         nome: "Capitão América",
         preco: 189.99,
-        imagem: "./src/assets/capitao-america.png",
+        imagem: "capitao-america.png",
         descricao: "Action Figure do Capitão América"
     },
     {
         id: 5,
         nome: "Thor",
         preco: 279.99,
-        imagem: "./src/assets/thor.png",
+        imagem: "thor.png",
         descricao: "Action Figure do Thor"
     }
 ];
@@ -48,34 +51,27 @@ function salvarCarrinho() {
 
 function adicionarCarrinho(id) {
     const produto = produtos.find(item => item.id === id);
-
     carrinho.push(produto);
-
     salvarCarrinho();
-
     alert(`${produto.nome} adicionado ao carrinho!`);
 }
 
 function removerCarrinho(index) {
     carrinho.splice(index, 1);
-
     salvarCarrinho();
-
     mostrarCarrinho();
     calcularTotalAutomatico();
 }
 
 function mostrarProdutos() {
-
     if (!containerProdutos) return;
 
     const html = produtos.map(item => `
         <div class="card">
-            <img src="${item.imagem}" alt="${item.nome}">
+            <img src="${assetsPath}${item.imagem}" alt="${item.nome}">
             <h3>${item.nome}</h3>
             <p>${item.descricao}</p>
             <p>R$ ${item.preco.toFixed(2)}</p>
-
             <button onclick="adicionarCarrinho(${item.id})">
                 Adicionar ao carrinho
             </button>
@@ -86,7 +82,6 @@ function mostrarProdutos() {
 }
 
 function mostrarCarrinho() {
-
     if (!containerCarrinho) return;
 
     if (carrinho.length === 0) {
@@ -96,13 +91,11 @@ function mostrarCarrinho() {
 
     const html = carrinho.map((item, index) => `
         <div class="card carrinho-card">
-            <img src="${item.imagem}" alt="${item.nome}">
-            
+            <img src="${assetsPath}${item.imagem}" alt="${item.nome}">
             <div>
                 <h3>${item.nome}</h3>
                 <p>${item.descricao}</p>
                 <p>R$ ${item.preco.toFixed(2)}</p>
-
                 <button onclick="removerCarrinho(${index})">
                     Remover
                 </button>
@@ -114,22 +107,15 @@ function mostrarCarrinho() {
 }
 
 function calcularTotalAutomatico() {
-
     if (!totalElemento) return;
-
     const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
-
     totalElemento.innerText = `Total: R$ ${total.toFixed(2)}`;
 }
 
 function aplicarDesconto() {
-
     if (!totalElemento) return;
-
     const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
-
     const desconto = total * 0.9;
-
     totalElemento.innerText = `Total com desconto: R$ ${desconto.toFixed(2)}`;
 }
 

@@ -29,13 +29,62 @@
         <section class="produtos">
             <h2>Itens do carrinho</h2>
 
-            <div id="carrinho-container" class="cards-container"></div>
+            <div id="carrinho-container" class="cards-container">
+                <div class="card carrinho-card">
+                    <img src="/src/assets/batman.png" alt="Batman">
+                    <div>
+                        <h3>Batman</h3>
+                        <p>Action Figure do Batman</p>
+                        <p>R$ 199.99</p>
+                        <button onclick="removerCarrinho(0)">Remover</button>
+                    </div>
+                </div>
+
+                <div class="card carrinho-card">
+                    <img src="/src/assets/homem-aranha.png" alt="Homem-Aranha">
+                    <div>
+                        <h3>Homem-Aranha</h3>
+                        <p>Action Figure do Homem-Aranha</p>
+                        <p>R$ 249.99</p>
+                        <button onclick="removerCarrinho(1)">Remover</button>
+                    </div>
+                </div>
+
+                <div class="card carrinho-card">
+                    <img src="/src/assets/homem-de-ferro.png" alt="Homem de Ferro">
+                    <div>
+                        <h3>Homem de Ferro</h3>
+                        <p>Action Figure do Homem de Ferro</p>
+                        <p>R$ 299.99</p>
+                        <button onclick="removerCarrinho(2)">Remover</button>
+                    </div>
+                </div>
+
+                <div class="card carrinho-card">
+                    <img src="/src/assets/capitao-america.png" alt="Capitão América">
+                    <div>
+                        <h3>Capitão América</h3>
+                        <p>Action Figure do Capitão América</p>
+                        <p>R$ 189.99</p>
+                        <button onclick="removerCarrinho(3)">Remover</button>
+                    </div>
+                </div>
+
+                <div class="card carrinho-card">
+                    <img src="/cp2javascript/pages/" alt="Thor">
+                    <div>
+                        <h3>Thor</h3>
+                        <p>Action Figure do Thor</p>
+                        <p>R$ 279.99</p>
+                        <button onclick="removerCarrinho(4)">Remover</button>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
         <section class="produtos">
             <h2>Resumo</h2>
-
             <h3 id="total">Total: R$ 0,00</h3>
            <div class="botoes">
             <button onclick="aplicarDesconto()">Aplicar 10% OFF</button>
